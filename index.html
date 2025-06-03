@@ -200,13 +200,17 @@
       user-select: none;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .anggota-list {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
+  @media (max-width: 768px) {
+  .anggota-list {
+    grid-template-columns: 1fr; /* dari 2 kolom jadi 1 kolom */
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  .anggota-card {
+    max-width: 90%; /* supaya tidak terlalu lebar */
+  }
+}
   </style>
 </head>
 <body>
