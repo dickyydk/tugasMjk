@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tugas Kelompok Manajemen Komputer Jaringan</title>
+  <title>Kelompok Informatika</title>
   <style>
     body {
       margin: 0;
@@ -66,15 +66,80 @@
       font-weight: bold;
     }
 
+    .contact-section {
+      margin: 60px auto;
+      max-width: 600px;
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+      border: 1px solid #00ffcc;
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #00ffcc;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      background-color: #0d0d0d;
+      border: 1px solid #00ffcc;
+      border-radius: 5px;
+      color: #ffffff;
+      font-family: 'Courier New', monospace;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #00ffcc;
+      color: #000000;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #00e6b8;
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       color: #777;
       font-size: 0.9em;
       border-top: 1px solid #333;
     }
 
-    /* Tambahan animasi teks */
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.4; }
@@ -88,31 +153,50 @@
 </head>
 <body>
   <header>
-    <h1>👨‍💻 Manajemen Komputer Jaringan</h1>
-    <p>Universitas 17 Agustus Surabaya 1945</p>
+    <h1>👨‍💻 Kelompok Informatika</h1>
+    <p>Ini adalah halaman web dengan konsep terminal gelap dan efek neon, menampilkan daftar anggota kelompok informatika.</p>
   </header>
 
   <section class="cards">
     <div class="card">
-      <h2>Nama: Dicky Dwi Kurniawan</h2>
-      <p>NIM: 1462300159</p>
+      <h2>Nama: Dicky Pratama</h2>
+      <p>NIM: 1462300011</p>
     </div>
     <div class="card">
       <h2>Nama: Agung Samudra</h2>
-      <p>NIM: 1462300158</p>
+      <p>NIM: 1462300012</p>
     </div>
     <div class="card">
-      <h2>Nama: Achmad Arya Syahputra</h2>
+      <h2>Nama: Laila Azhari</h2>
       <p>NIM: 1462300013</p>
     </div>
     <div class="card">
-      <h2>Nama: Dhika Rafli Frastyar</h2>
+      <h2>Nama: Sinta Maulida</h2>
       <p>NIM: 1462300014</p>
     </div>
   </section>
 
+  <section class="contact-section">
+    <h2>📬 Contact Us</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="nama">Nama Anda</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama...">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Anda</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan email...">
+      </div>
+      <div class="form-group">
+        <label for="pesan">Pesan</label>
+        <textarea id="pesan" name="pesan" placeholder="Ketik pesan Anda di sini..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Kirim Pesan</button>
+    </form>
+  </section>
+
   <footer>
-    &copy; 2025 | Teknik Informatika <span class="terminal-effect">█</span>
+    &copy; 2025 | Sistem Informasi Kelompok 4 <span class="terminal-effect">█</span>
   </footer>
 </body>
 </html>
