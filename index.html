@@ -1,205 +1,223 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kelompok Informatika</title>
   <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     body {
-      margin: 0;
-      padding: 0;
-      background-color: #0d0d0d;
-      font-family: 'Courier New', monospace;
-      color: #00ffcc;
-    }
-
-    header {
-      text-align: center;
-      padding: 40px 20px 10px 20px;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      text-shadow: 0 0 10px #00ffcc;
-    }
-
-    header p {
-      font-size: 1.1em;
-      color: #cccccc;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .cards {
+      background: #121212;
+      color: #e0e0e0;
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      gap: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00ffc8;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      text-shadow: 0 0 10px #00ffc8;
+    }
+
+    p.description {
+      max-width: 700px;
+      font-size: 1.1rem;
+      color: #bbb;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .anggota-list {
+      display: flex;
+      gap: 1.5rem;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      margin: 40px 20px;
+      max-width: 900px;
+      width: 100%;
     }
 
-    .card {
-      background-color: #1a1a1a;
-      border: 1px solid #00ffcc;
-      border-radius: 10px;
-      padding: 20px;
-      width: 250px;
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(0, 255, 204, 0.6);
-    }
-
-    .card h2 {
-      color: #ffffff;
-      margin: 0 0 10px 0;
-      font-size: 1.2em;
-    }
-
-    .card p {
-      margin: 0;
-      color: #00ffcc;
-      font-weight: bold;
-    }
-
-    .contact-section {
-      margin: 60px auto;
-      max-width: 600px;
-      background-color: #1a1a1a;
-      padding: 30px;
+    .anggota-card {
+      background: linear-gradient(145deg, #1f1f1f, #292929);
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
-      border: 1px solid #00ffcc;
+      box-shadow: 0 4px 10px rgba(0,255,200,0.3);
+      padding: 1.5rem 2rem;
+      width: 220px;
+      color: #00ffc8;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      user-select: none;
+    }
+
+    .anggota-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,255,200,0.7);
+    }
+
+    .nim {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1.5px;
+    }
+
+    .nama {
+      font-size: 1.5rem;
+      text-align: center;
+      color: #00ffc8;
+      text-shadow: 0 0 8px #00bfa6;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      max-width: 700px;
+      width: 100%;
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 255, 200, 0.4);
+      color: #fff;
     }
 
     .contact-section h2 {
       text-align: center;
-      color: #ffffff;
-      margin-bottom: 20px;
-      text-shadow: 0 0 8px #00ffcc;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #00ffc8;
+      text-shadow: 0 0 10px #00ffc8;
     }
 
-    .form-group {
-      margin-bottom: 15px;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      color: #00ffcc;
+    label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #00ffc8;
+      text-shadow: 0 0 5px #00bfa6;
     }
 
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 10px;
-      background-color: #0d0d0d;
-      border: 1px solid #00ffcc;
-      border-radius: 5px;
-      color: #ffffff;
-      font-family: 'Courier New', monospace;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      box-shadow: 0 0 10px #00ffcc;
-    }
-
-    .form-group textarea {
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #292929;
+      color: #fff;
+      font-size: 1rem;
       resize: vertical;
-      height: 100px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      outline: 2px solid #00ffc8;
+      background-color: #1a1a1a;
+    }
+
+    textarea {
+      min-height: 100px;
     }
 
     .submit-btn {
-      width: 100%;
-      background-color: #00ffcc;
-      color: #000000;
+      background-color: #00ffc8;
+      color: #000;
+      font-weight: 700;
       border: none;
-      padding: 12px;
-      font-size: 16px;
-      font-weight: bold;
+      padding: 0.8rem 1.2rem;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
     }
 
     .submit-btn:hover {
-      background-color: #00e6b8;
+      background-color: #00bfa6;
     }
 
     footer {
+      margin-top: auto;
+      padding: 1rem 0;
+      width: 100%;
       text-align: center;
-      padding: 30px 20px;
-      color: #777;
-      font-size: 0.9em;
-      border-top: 1px solid #333;
+      color: #444;
+      font-size: 0.9rem;
+      user-select: none;
     }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    .terminal-effect {
-      display: inline-block;
-      animation: blink 1s step-start infinite;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .anggota-list {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>👨‍💻 Kelompok Informatika</h1>
-    <p>Ini adalah halaman web dengan konsep terminal gelap dan efek neon, menampilkan daftar anggota kelompok informatika.</p>
-  </header>
 
-  <section class="cards">
-    <div class="card">
-      <h2>Nama: Dicky Pratama</h2>
-      <p>NIM: 1462300011</p>
+  <h1>Kelompok Informatika</h1>
+  <p class="description">
+    Selamat datang di halaman web kelompok informatika kami. Di sini kami memperkenalkan anggota-anggota kami dengan NIM dan nama lengkap. Jangan ragu untuk menghubungi kami melalui form di bawah!
+  </p>
+
+  <section class="anggota-list">
+    <div class="anggota-card">
+      <div class="nim">1462300158</div>
+      <div class="nama">Agung Samudra</div>
     </div>
-    <div class="card">
-      <h2>Nama: Agung Samudra</h2>
-      <p>NIM: 1462300012</p>
+    <div class="anggota-card">
+      <div class="nim">1462300255</div>
+      <div class="nama">Nia Rahmawati</div>
     </div>
-    <div class="card">
-      <h2>Nama: Laila Azhari</h2>
-      <p>NIM: 1462300013</p>
+    <div class="anggota-card">
+      <div class="nim">1462300367</div>
+      <div class="nama">Dicky Pratama</div>
     </div>
-    <div class="card">
-      <h2>Nama: Sinta Maulida</h2>
-      <p>NIM: 1462300014</p>
+    <div class="anggota-card">
+      <div class="nim">1462300489</div>
+      <div class="nama">Sari Lestari</div>
     </div>
   </section>
 
   <section class="contact-section">
     <h2>📬 Contact Us</h2>
-    <form action="https://formsubmit.co/dwidicky822@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+    <form action="https://formsubmit.co/youremail@example.com" method="POST">
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" />
 
-      <div class="form-group">
-        <label for="nama">Nama Anda</label>
-        <input type="text" id="nama" name="Nama" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email Anda</label>
-        <input type="email" id="email" name="Email" required>
-      </div>
-      <div class="form-group">
-        <label for="pesan">Pesan</label>
-        <textarea id="pesan" name="Pesan" required></textarea>
-      </div>
+      <label for="nama">Nama Anda</label>
+      <input type="text" id="nama" name="Nama" placeholder="Masukkan nama..." required />
+
+      <label for="email">Email Anda</label>
+      <input type="email" id="email" name="Email" placeholder="Masukkan email..." required />
+
+      <label for="pesan">Pesan</label>
+      <textarea id="pesan" name="Pesan" placeholder="Tulis pesan Anda di sini..." required></textarea>
+
       <button type="submit" class="submit-btn">Kirim Pesan</button>
     </form>
   </section>
 
-  <footer>
-    &copy; 2025 | Sistem Informasi Kelompok 4 <span class="terminal-effect">█</span>
-  </footer>
+  <footer>© 2025 Kelompok Informatika</footer>
+  
 </body>
 </html>
