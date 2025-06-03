@@ -3,83 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daftar Anggota Kelompok</title>
+  <title>Kelompok Informatika</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #ffffff;
+      background-color: #0d0d0d;
+      font-family: 'Courier New', monospace;
+      color: #00ffcc;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-    }
-
-    .title {
+    header {
       text-align: center;
-      font-size: 28px;
+      padding: 40px 20px 10px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
       margin-bottom: 10px;
+      text-shadow: 0 0 10px #00ffcc;
     }
 
-    .description {
-      text-align: center;
-      font-size: 16px;
+    header p {
+      font-size: 1.1em;
       color: #cccccc;
-      margin-bottom: 30px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 20px;
     }
 
     .card {
-      background-color: #f4f4f4;
-      color: #000000;
+      background-color: #1a1a1a;
+      border: 1px solid #00ffcc;
       border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      width: 250px;
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 255, 204, 0.6);
     }
 
     .card h2 {
-      margin-top: 0;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+      font-size: 1.2em;
     }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
+    .card p {
+      margin: 0;
+      color: #00ffcc;
+      font-weight: bold;
     }
 
-    li {
-      font-size: 18px;
-      padding: 8px 0;
-    }
-
-    .footer {
+    footer {
       text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #888;
+      padding: 20px;
+      color: #777;
+      font-size: 0.9em;
+      border-top: 1px solid #333;
+    }
+
+    /* Tambahan animasi teks */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .terminal-effect {
+      display: inline-block;
+      animation: blink 1s step-start infinite;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="title">Halaman Web Daftar Anggota</div>
-    <div class="description">
-      Halaman ini menampilkan daftar NIM dari 4 orang anggota kelompok dalam tampilan gelap dengan elemen terang sebagai sorotan informasi.
-    </div>
+  <header>
+    <h1>👨‍💻 Kelompok Informatika</h1>
+    <p>Ini adalah halaman web dengan konsep terminal gelap dan efek neon, menampilkan daftar anggota kelompok informatika.</p>
+  </header>
 
+  <section class="cards">
     <div class="card">
-      <h2>Daftar NIM Anggota:</h2>
-      <ul>
-        <li>1462300011</li>
-        <li>1462300012</li>
-        <li>1462300013</li>
-        <li>1462300014</li>
-      </ul>
+      <h2>Nama: Dicky Pratama</h2>
+      <p>NIM: 1462300011</p>
     </div>
+    <div class="card">
+      <h2>Nama: Agung Samudra</h2>
+      <p>NIM: 1462300012</p>
+    </div>
+    <div class="card">
+      <h2>Nama: Laila Azhari</h2>
+      <p>NIM: 1462300013</p>
+    </div>
+    <div class="card">
+      <h2>Nama: Sinta Maulida</h2>
+      <p>NIM: 1462300014</p>
+    </div>
+  </section>
 
-    <div class="footer">© 2025 | Nama Kelompok Anda</div>
-  </div>
+  <footer>
+    &copy; 2025 | Sistem Informasi Kelompok 4 <span class="terminal-effect">█</span>
+  </footer>
 </body>
 </html>
